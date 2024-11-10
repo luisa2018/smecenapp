@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+/* Estilos globales */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+/* Contenedor de login y registro */
+.login-container, .register-container {
+  background-color: #F2F8FF;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Formularios */
+.login-form h2, .register-form h2 {
+  margin-bottom: 1.5rem;
+  color: #2F4F7F;
+}
+
+.login-form label, .register-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #7A90B1;
+}
+
+.login-form input, .register-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #2F4F7F;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background-color: #1e355b;
+}
+
+button[type="button"] {
+  background-color: #ccc;
+}
+
+button[type="button"]:hover {
+  background-color: #999;
+}
+
+/* Estilos para la pregunta y el botón de registro */
+.register-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.register-prompt p {
+  margin: 0;
+  margin-right: 0.5rem;
+  color: #7A90B1;
+}
+
+.register-prompt button {
+  background-color: #2F4F7F;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.register-prompt button:hover {
+  background-color: #1e355b;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .login-container, .register-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .register-prompt {
+    flex-direction: column;
+  }
+
+  .register-prompt p {
+    margin-bottom: 0.5rem;
+  }
+}

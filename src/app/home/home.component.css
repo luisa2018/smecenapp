@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #2F4F7F;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #1e355b;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onRegister() {
-    // Lógica de autenticación para el registro
-    if (this.password === this.confirmPassword) {
-      console.log('Register:', this.email, this.password);
+    if (this.password !== this.confirmPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+
+    if (this.authService.register(this.email, this.password)) {
+      this.router.navigate(['/home']);
     } else {
-      console.error('Passwords do not match');
+      alert('El usuario ya existe');
     }
   }
 
