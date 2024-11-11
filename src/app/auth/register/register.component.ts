@@ -20,11 +20,14 @@ export class RegisterComponent {
       return;
     }
 
-    if (this.authService.register(this.email, this.password)) {
-      this.router.navigate(['/home']);
-    } else {
-      alert('El usuario ya existe');
-    }
+    this.authService.register(this.email, this.password).subscribe(
+      () => {
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        alert('Error en el registro');
+      }
+    );
   }
 
   cancel() {
