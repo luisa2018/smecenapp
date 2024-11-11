@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +20,11 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
     this.router.navigate(['/auth/login']);
   }
 
   isAuthenticated(): boolean {
-    return localStorage.getItem('currentUser') !== null;
+    return localStorage.getItem('token') !== null;
   }
 }
