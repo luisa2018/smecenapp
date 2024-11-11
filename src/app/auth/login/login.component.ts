@@ -14,11 +14,15 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    if (this.authService.login(this.email, this.password)) {
-      this.router.navigate(['/home']);
-    } else {
-      alert('Credenciales incorrectas');
-    }
+    this.authService.login(this.email, this.password).subscribe(
+      (response) => {
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        alert('Credenciales incorrectas');
+      }
+    );
   }
 
   goToRegister() {
